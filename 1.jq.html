@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<script src="js/jquery-1.11.3.js"></script>
+		<script type="text/javascript">
+// 			window.onload = function(){
+// 				var oBtn = document.querySelector('#btn');
+// 				alert('原生：' + oBtn);
+// 				var oDiv = document.querySelector('#box');
+// 				oBtn.onclick = function(){
+// 					alert(oDiv.innerHTML);
+// 				}
+// 			}
+			
+			jQuery(function(){
+// 				var $btn = jQuery('#btn');
+// 				alert('jquery:' + $btn);
+// 				$btn.click(function(){
+// 					alert($('#box').html());
+// 					$('#box').text('<strong>滁州</strong>');
+// 				})
+
+				var $btn = $('#btn');
+				$btn.click(function(){
+// 					alert(this.value);
+// 					alert($(this).val())
+					$('#box')[0].innerHTML = "js";
+				})
+			})
+			
+			/*
+			一、
+				window.onload = function(){}
+				1. 页面加载：加载页面中所有的东西，包含dom元素、图片、音频、视频等内容
+				2. 在同一个页面中，只能有一个window.onload
+				$(function(){})
+				1. 文档加载 ：当页面中DOM部分加载完成，就会执行回调函数
+				2. 在同一个页面，$(function(){}),可以使用无限次
+			二、$ 表示jQuery的别名。
+			
+			三、 html() === innerHTML
+				text() === innerText
+			     val() === value
+				 
+			四、将原生对象转为jQuery对象 $(原生对象)
+				将jQuery对象转为原生对象   $()[0]   $().get(0)
+			*/
+		</script>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="按钮" />
+		<div id="box">
+			hello world
+		</div>
+		<!-- <img src="../day21_2018_10_9/web原理.png" > -->
+	</body>
+</html>
